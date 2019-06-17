@@ -1,5 +1,5 @@
-####创建用户和虚拟机
-#####创建用户
+#### 创建用户和虚拟机
+##### 创建用户
 使用<code>administrator</code>权限创建用户。在 Admin 标签下，在右侧选择 Users, 就可以输入用户和密码进行创建用户了, 创建用户的时候需要设置用户的 Tags.
  有四种Tags：management < policymaker < monitoring< administrator.
  
@@ -27,7 +27,7 @@
  3. 查看创建和删除permissions
  4. 关闭其他用户的connections
   
- #####设置用户权限(配置、写、读）
+ ##### 设置用户权限(配置、写、读）
 >$ set_permissions [-p vhost] user conf write read
 
 | Operation | other | Configure | Write | Read |  
@@ -51,14 +51,14 @@
 
  
  
-#####创建虚拟机
+##### 创建虚拟机
 使用<code>administrator</code>权限创建。 在 Admin 标签下，在右侧选择 Virtual Hosts, 输入 虚拟机名称点击 Add virtual host 按钮就添加一个新的虚拟了。
-#####用户和虚拟机关联
+##### 用户和虚拟机关联
 两种方式：可以通过用户关联虚拟机，也可以通过虚拟机关联用户，都可以的。  
 1.通过用户关联虚拟机，在用户列表，通过点击用户名称，在下方有一个 Set permission, 在 Virtual Host: 选项选择需要挂靠的虚拟机，点击 Set Permission 按钮即可关联到对应的虚拟下。  
 2.通过虚拟机关联用户，在虚拟机列表，通过点击虚拟机名称，在下方有一个 Set permission, 在 User 选项选择需要添加的用户，点击 Set permission 按钮即可添加用户到该虚拟机下。  
 
-####创建交换器
+#### 创建交换器
 在 Exchanges 标签下创建。  
 交换器四种类型:  
 路由模式(Direct)：  
@@ -73,7 +73,7 @@ Headers:
 参数：alternate-exchange  
 设置备用交换器，当消息没法路由到一个正确的队列的时候，会交给该交换器重新进行路由，如果还没法路由到一个正确的队列，则丢弃消息。  
 
-####创建队列
+#### 创建队列
 在 Queues 标签下创建  
 Name: 队列名称  
 Durability: 是否持久化, 队列的声明默认是存放到内存中的，如果rabbitmq重启会丢失，如果想重启之后还存在就要使队列持久化，保存到Erlang自带的Mnesia数据库中，当rabbitmq重启之后会读取该数据库  
@@ -91,5 +91,5 @@ Arguments:
 * Lazy mode(x-queue-mode=lazy): 消费模式，收到消息后先加载到硬盘中，消费的时候再从硬盘中读取
 * Master locator(x-queue-master-locator): 集群有关设置
 
-####交换器和队列的绑定
+#### 交换器和队列的绑定
 可以通过交换器绑定队列也可以通过队列绑定交换器,同时指定路由键。路由设置根据交换器类型作用不一。
